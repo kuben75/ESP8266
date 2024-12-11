@@ -40,14 +40,14 @@ graph LR
 
 ## Installation Guide
 
-### 1. `Clone the repository`
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/kuben75/ESP8266.git
 cd ESSSP8266
 ```
 
-### 2. `Configure and flash the ESP8266 and start Arduino program`
+### 2. Configure and flash the ESP8266 and start Arduino program
 
 1. `Upload the esp8266 program to your ESP8266 using the Arduino IDE.`
 2. `Configure Wi-Fi credentials, MQTT broker address, username, and password in the code:`
@@ -83,7 +83,7 @@ mqtt_username = ""
  # MQTT password for authentication
 mqtt_password = ""  
 ```
-IMPORTANT NOTE`
+#### IMPORTANT NOTE
  > ⚠️ The `subscriber.py` script also requires configuration for the InfluxDB client. Pay special attention to the following line of code 
 
 ```bash
