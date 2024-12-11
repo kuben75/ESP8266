@@ -44,7 +44,7 @@ graph LR
 
 ```bash
 git clone https://github.com/kuben75/ESP8266.git
-cd ESSSP8266
+cd ESSP8266
 ```
 
 ### 2. Configure and flash the ESP8266 and start Arduino program
@@ -66,7 +66,7 @@ const char *mqtt_topic_video = "";
 const char *mqtt_username = "";                               
 const char *mqtt_password = ""; 
 ```
-3. `Configure the python programs`
+### 3. Configure the python programs
 You need to configure the following Python scripts to match your setup:
 `subscriber.py`
 `speech-to-text.py`
@@ -96,7 +96,7 @@ This token is personal and must be generated in your InfluxDB instance. Follow t
 3. Select All Access API Token to generate a token with full permissions.
 4. Copy the generated token and paste it into the influxdb_token variable in the `subscriber.py` script.
 
-### 3. Set up Docker containers
+### 4. Set up Docker containers
 
 ```bash 
 
@@ -108,7 +108,7 @@ docker-compose up
 ```
 Note: The first build might take 5–10 minutes, depending on your system and network speed. 
 
-### 4. Verify the setup
+### 5. Verify the setup
 
 1. `Access Grafana at http://localhost:3000.`
 2. `Default Grafana credentials: admin / admin (please change them after login).`
