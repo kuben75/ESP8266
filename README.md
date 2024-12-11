@@ -83,7 +83,7 @@ mqtt_username = ""
  # MQTT password for authentication
 mqtt_password = ""  
 ```
-#### IMPORTANT NOTE
+###  NOTE
  > ⚠️ The `subscriber.py` script also requires configuration for the InfluxDB client. Pay special attention to the following line of code 
 
 ```bash
@@ -100,7 +100,7 @@ This token is personal and must be generated in your InfluxDB instance. Follow t
 
 ```bash 
 
-# If you are inside project, build the Docker containers
+# If you enter project name in terminal, build the Docker containers
 docker-compose build
 
 # Start the containers
@@ -108,15 +108,15 @@ docker-compose up
 ```
 Note: The first build might take 5–10 minutes, depending on your system and network speed. 
 
-### 4. `Verify the setup`
+### 4. Verify the setup
 
 1. `Access Grafana at http://localhost:3000.`
 2. `Default Grafana credentials: admin / admin (please change them after login).`
 3. `Use MQTT tools like MQTTX to test publishing and subscribing to the broker.`
-## `Important Note` 
+## Important Note
 Grafana dashboards and InfluxDB configurations may require additional setup depending on your requirements. For example,  setting up InfluxDB as the data source in Grafana, you may encounter an error when using the default HTTP URL `http://localhost:8086`. This issue typically occurs when Grafana and InfluxDB are running on separate machines or containers.
 
-To resolve this, replace `http://localhost:8086 `with the actual IP address of the machine running InfluxDB. For example:
+To resolve this, replace `http://localhost:8086` with the actual IP address of the machine running InfluxDB. For example:
 ```bash
 http://192.168.1.104:8086
 ```
