@@ -1,0 +1,59 @@
+version: '3.9'
+
+services:
+  emqx:
+    image: emqx/emqx:latest
+    container_name: mqtt-broker
+    ports:
+      - "1883:1883"
+      - "8883:8883"
+    environment:
+      - EMQX_ADMIN_PASSWORD=public
+    restart: unless-stopped
+
+  influxdb:
+    image: influxdb:latest
+    container_name: influxdb_new
+    ports:
+      - "8086:8086"
+    environment:
+      - INFLUXDB_ADMIN_USER=temperaturę
+      - INFLUXDB_ADMIN_PASSWORD=zaq1@WSX
+      - INFLUXDB_BUCKET=arduino
+      - INFLUXDB_ORG=cdv
+      - INFLUXDB_TOKEN=HogG9IpcvzKi6KbQMz7uva0HdX34qA1jmv-Kc7FEglB3DtgZI_6zCnjbMMmcARzO_SgfTjtGQfD3itpz0cQj_w==
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana_new
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=zaq1@WSX
+    depends_on:
+      - influxdb
+
+  subscriber:
+    build: ./subscriber
+    container_name: subscriber
+    depends_on:
+      - emqx
+      - influxdb
+    restart: unless-stopped
+
+  speech-to-text:
+    build: ./speech-to-text
+    container_name: speech-to-text
+    depends_on:
+      - emqx
+    restart: unless-stopped
+
+  video-to-text:
+    build: ./video-to-text
+    container_name: video-to-text
+    depends_on:
+      - emqx
+    volumes:
+      - ./video-to-text:/app
+    restart: unless-stopped

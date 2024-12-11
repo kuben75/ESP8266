@@ -1,0 +1,12 @@
+.venv
+*.crt
+__pycache__
+*.pt
+env/
+venv/
+ENV/
+*.swp
+.vscode/
+.idea/
+*.log
+docker-compose.override.yml
