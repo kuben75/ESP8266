@@ -50,7 +50,16 @@ cd ESSP8266
 ### 2. Configure and flash the ESP8266 and start Arduino program
 
 1. `Upload the esp8266 program to your ESP8266 using the Arduino IDE.`
-2. `Configure Wi-Fi credentials, MQTT broker address, username, and password in the code:`
+2. `Install required libraries in Arduino libraries manager:`
+   ```bash
+   LiquidCrystal_I2C.h
+   OneWire.h
+   DallasTemperature.h
+   ESP8266WiFi.h
+   PubSubClient.h
+   time.h
+   ```
+3. `Configure Wi-Fi credentials, MQTT broker address, username, and password in the code:`
 
 ```bash 
 # Wi-Fi name and password
